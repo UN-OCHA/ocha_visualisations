@@ -1,0 +1,9 @@
+services:
+  ocha_powerbi.subscriber:
+    class: Drupal\ocha_powerbi\EventSubscriber\OchaPowerbiEventSubscriber
+    arguments: ['@logger.channel.ocha_powerbi', '@config.factory']
+    tags:
+      - { name: event_subscriber }
+  logger.channel.ocha_powerbi:
+    parent: logger.channel_base
+    arguments: ['ocha_powerbi']

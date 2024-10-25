@@ -1,0 +1,8 @@
+type: module
+name: OCHA Datawrapper
+description: 'Handles datawrapper integration.'
+package: unocha
+core_version_requirement: ^9 || ^10
+dependencies:
+  - ocha_visualizations:ocha_visualizations
+  - paragraphs:paragraphs

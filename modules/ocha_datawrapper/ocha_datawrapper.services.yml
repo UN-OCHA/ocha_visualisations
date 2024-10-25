@@ -1,0 +1,9 @@
+services:
+  ocha_datawrapper.subscriber:
+    class: Drupal\ocha_datawrapper\EventSubscriber\OchaDatawrapperEventSubscriber
+    arguments: ['@logger.channel.ocha_datawrapper', '@config.factory']
+    tags:
+      - { name: event_subscriber }
+  logger.channel.ocha_datawrapper:
+    parent: logger.channel_base
+    arguments: ['ocha_datawrapper']
