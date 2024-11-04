@@ -1,0 +1,39 @@
+uuid: dfbda66e-7ea3-41f0-92df-62858d7e90ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ocha_vimeo.field_embed_url
+    - field.field.paragraph.ocha_vimeo.field_text
+    - field.field.paragraph.ocha_vimeo.field_title
+    - paragraphs.paragraphs_type.ocha_vimeo
+  module:
+    - text
+id: paragraph.ocha_vimeo.default
+targetEntityType: paragraph
+bundle: ocha_vimeo
+mode: default
+content:
+  field_embed_url:
+    type: ocha_vimeo
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: { }

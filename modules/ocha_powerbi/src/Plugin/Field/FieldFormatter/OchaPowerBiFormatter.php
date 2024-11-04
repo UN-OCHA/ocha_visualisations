@@ -12,7 +12,8 @@ use Drupal\Core\Field\FormatterBase;
  *   id = "ocha_powerbi",
  *   label = @Translation("OCHA PowerBi formatter"),
  *   field_types = {
- *     "link"
+ *     "link",
+ *     "uri"
  *   }
  * )
  */

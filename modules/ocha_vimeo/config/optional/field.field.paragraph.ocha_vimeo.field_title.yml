@@ -1,0 +1,19 @@
+uuid: 862bc441-4a30-4319-91a3-744b9f749158
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.ocha_vimeo
+id: paragraph.ocha_vimeo.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: ocha_vimeo
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

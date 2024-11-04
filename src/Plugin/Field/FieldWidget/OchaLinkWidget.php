@@ -3,21 +3,21 @@
 namespace Drupal\ocha_visualisations\Plugin\Field\FieldWidget;
 
 use Drupal\Core\Field\Attribute\FieldWidget;
-use Drupal\Core\Field\FieldItemListInterface;
-use Drupal\Core\Field\Plugin\Field\FieldWidget\UriWidget;
-use Drupal\Core\Field\WidgetBase;
-use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\Core\Field\FieldItemListInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\link\LinkItemInterface;
+use Drupal\link\Plugin\Field\FieldWidget\LinkWidget;
 
 /**
- * Plugin implementation of the 'uri' widget.
+ * Plugin implementation of the 'ocha_link' widget.
  */
 #[FieldWidget(
-  id: 'ocha_uri',
-  label: new TranslatableMarkup('URI field (OCHA)'),
-  field_types: ['uri', 'ocha_uri'],
+  id: 'ocha_link_default',
+  label: new TranslatableMarkup('OCHA Link'),
+  field_types: ['link'],
 )]
-class OchaUriWidget extends UriWidget {
+class OchaLinkWidget extends LinkWidget {
 
   /**
    * {@inheritdoc}
@@ -106,13 +106,20 @@ class OchaUriWidget extends UriWidget {
    * {@inheritdoc}
    */
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
-    $element['value'] = $element + [
+    /** @var \Drupal\link\LinkItemInterface $item */
+    $item = $items[$delta];
+
+    $display_uri = $item->uri;
+    $element['uri'] = [
       '#type' => 'url',
-      '#default_value' => $items[$delta]->value ?? NULL,
+      '#title' => $this->t('URL'),
+      '#default_value' => $display_uri,
+      '#maxlength' => 2048,
+      '#required' => $element['#required'],
       '#size' => $this->getSetting('size'),
       '#placeholder' => $this->getSetting('placeholder'),
-      '#maxlength' => $this->getFieldSetting('max_length'),
       '#element_validate' => [[$this, 'validateHost']],
+      '#link_type' => LinkItemInterface::LINK_EXTERNAL,
     ];
 
     return $element;
@@ -148,6 +155,17 @@ class OchaUriWidget extends UriWidget {
       '@allowed_hosts' => implode(', ', $allowed_hosts),
     ]);
     $form_state->setError($element, $error);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function massageFormValues(array $values, array $form, FormStateInterface $form_state) {
+    foreach ($values as &$value) {
+      $value['uri'] = static::getUserEnteredStringAsUri($value['uri']);
+      $value += ['options' => []];
+    }
+    return $values;
   }
 
 }

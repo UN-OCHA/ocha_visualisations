@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * Module file for the ocha_vimeo module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function ocha_vimeo_theme() {
+  return [
+    'ocha_vimeo_formatter' => [
+      'variables' => [
+        'embed_url' => NULL,
+        'width' => NULL,
+        'height' => NULL,
+      ],
+    ],
+  ];
+}

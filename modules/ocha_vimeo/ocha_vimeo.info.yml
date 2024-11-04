@@ -1,0 +1,8 @@
+type: module
+name: OCHA vimeo
+description: 'Handles vimeo integration.'
+package: unocha
+core_version_requirement: ^9 || ^10
+dependencies:
+  - ocha_visualisations:ocha_visualisations
+  - paragraphs:paragraphs

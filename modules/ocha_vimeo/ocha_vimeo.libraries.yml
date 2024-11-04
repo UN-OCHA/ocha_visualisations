@@ -1,0 +1,4 @@
+vimeo-responsive-iframe:
+  css:
+    component:
+      css/ocha-vimeo.css: {}

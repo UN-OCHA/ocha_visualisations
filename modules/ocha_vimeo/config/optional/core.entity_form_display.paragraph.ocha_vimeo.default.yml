@@ -1,0 +1,45 @@
+uuid: d62f1c31-2ea4-4180-9de9-465ad8c2d861
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ocha_vimeo.field_embed_url
+    - field.field.paragraph.ocha_vimeo.field_text
+    - field.field.paragraph.ocha_vimeo.field_title
+    - paragraphs.paragraphs_type.ocha_vimeo
+  module:
+    - ocha_visualisations
+    - text
+id: paragraph.ocha_vimeo.default
+targetEntityType: paragraph
+bundle: ocha_vimeo
+mode: default
+content:
+  field_embed_url:
+    type: ocha_uri
+    weight: 2
+    region: content
+    settings:
+      size: '60'
+      placeholder: 'Link of the Vimeo video'
+      allowed_hosts: vimeo.com
+    third_party_settings: {  }
+  field_text:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,9 @@
+services:
+  ocha_vimeo.subscriber:
+    class: Drupal\ocha_vimeo\EventSubscriber\OchaVimeoEventSubscriber
+    arguments: ['@logger.channel.ocha_vimeo', '@config.factory']
+    tags:
+      - { name: event_subscriber }
+  logger.channel.ocha_vimeo:
+    parent: logger.channel_base
+    arguments: ['ocha_vimeo']

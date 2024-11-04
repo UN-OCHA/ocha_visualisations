@@ -20,7 +20,7 @@ use Drupal\Core\TypedData\DataDefinition;
 #[FieldType(
   id: "ocha_uri",
   label: new TranslatableMarkup("URI"),
-  description: new TranslatableMarkup("An entity field containing a URI."),
+  description: new TranslatableMarkup("A field containing a URI."),
   default_widget: "ocha_uri",
   default_formatter: "uri_link",
 )]
