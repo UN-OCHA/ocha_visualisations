@@ -2,7 +2,7 @@
 
 namespace Drupal\ocha_datawrapper\EventSubscriber;
 
-use Drupal\ocha_visualizations\BaseRequestEventSubscriber;
+use Drupal\ocha_visualisations\BaseRequestEventSubscriber;
 
 /**
  * Subscribing an event.

@@ -1,6 +1,6 @@
 {
-    "name": "unocha/ocha_visualizations",
-    "description": "UNOCHA visualizations",
+    "name": "unocha/ocha_visualisations",
+    "description": "UNOCHA visualisations",
     "license": "GPL-2.0-or-later",
     "type": "drupal-module",
     "require": {

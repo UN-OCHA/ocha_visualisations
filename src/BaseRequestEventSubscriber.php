@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\ocha_visualizations;
+namespace Drupal\ocha_visualisations;
 
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Psr\Log\LoggerInterface;

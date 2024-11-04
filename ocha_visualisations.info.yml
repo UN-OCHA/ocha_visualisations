@@ -1,5 +1,5 @@
 type: module
-name: UNOCHA Visualizations
-description: 'UNOCHA visualizations.'
+name: UNOCHA visualisations
+description: 'UNOCHA visualisations.'
 package: unocha
 core_version_requirement: ^9 || ^10 || ^11
