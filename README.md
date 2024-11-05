@@ -8,7 +8,7 @@ Embed charts and tables from [Datawrapper](https://www.datawrapper.de/)
 
 ## Power BI
 
-Embed visualisations from [Power BI](https://www.microsoft.com/en-us/power-platform/products/power-bi)
+Embed visualisations and more from [Power BI](https://www.microsoft.com/en-us/power-platform/products/power-bi)
 
 ## Vimeo
 
