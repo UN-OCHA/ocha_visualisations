@@ -12,6 +12,9 @@ class OchavimeoEventSubscriber extends BaseRequestEventSubscriber {
   /**
    * {@inheritdoc}
    */
-  protected $frame_url = 'https://vimeo.com';
+  protected $frame_urls = [
+    'https://vimeo.com',
+    'https://player.vimeo.com',
+  ];
 
 }

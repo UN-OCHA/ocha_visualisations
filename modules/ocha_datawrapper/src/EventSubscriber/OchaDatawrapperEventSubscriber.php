@@ -12,6 +12,8 @@ class OchaDatawrapperEventSubscriber extends BaseRequestEventSubscriber {
   /**
    * {@inheritdoc}
    */
-  protected $frame_url = 'https://datawrapper.dwcdn.net';
+  protected $frame_urls = [
+    'https://datawrapper.dwcdn.net',
+  ];
 
 }

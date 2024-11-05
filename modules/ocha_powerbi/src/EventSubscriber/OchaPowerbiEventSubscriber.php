@@ -12,6 +12,8 @@ class OchaPowerbiEventSubscriber extends BaseRequestEventSubscriber {
   /**
    * {@inheritdoc}
    */
-  protected $frame_url = 'https://app.powerbi.com';
+  protected $frame_urls = [
+    'https://app.powerbi.com',
+  ];
 
 }

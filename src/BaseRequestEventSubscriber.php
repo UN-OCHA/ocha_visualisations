@@ -44,9 +44,9 @@ class BaseRequestEventSubscriber implements EventSubscriberInterface {
   /**
    * URL for iframe.
    *
-   * @var string
+   * @var array
    */
-  protected $frame_url = '';
+  protected $frame_urls = [];
 
   /**
    * Constructs an SecKitEventSubscriber object.
@@ -68,7 +68,7 @@ class BaseRequestEventSubscriber implements EventSubscriberInterface {
    *   Filter Response Event object.
    */
   public function onKernelResponse(ResponseEvent $event) {
-    if (empty($this->frame_url)) {
+    if (empty($this->frame_urls)) {
       return;
     }
 
@@ -94,18 +94,21 @@ class BaseRequestEventSubscriber implements EventSubscriberInterface {
     }
 
     $directives = explode('; ', $directives);
-    $found = FALSE;
-    foreach ($directives as &$directive) {
-      if (strpos($directive, 'frame-src') === 0) {
-        $found = TRUE;
-        if (strpos($directive, $this->frame_url) === FALSE) {
-          $directive .= ' ' . $this->frame_url;
+
+    foreach ($this->frame_urls as $frame_url) {
+      $found = FALSE;
+      foreach ($directives as &$directive) {
+        if (strpos($directive, 'frame-src') === 0) {
+          $found = TRUE;
+          if (strpos($directive, $frame_url) === FALSE) {
+            $directive .= ' ' . $frame_url;
+          }
         }
       }
-    }
 
-    if (!$found) {
-      $directives[] = 'frame-src ' . $this->frame_url;
+      if (!$found) {
+        $directives[] = 'frame-src ' . $frame_url;
+      }
     }
 
     // Merge directives.
