@@ -1,21 +1,23 @@
-
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.ocha_vimeo.field_embed_url
-    - field.field.paragraph.ocha_vimeo.field_text
-    - field.field.paragraph.ocha_vimeo.field_title
-    - paragraphs.paragraphs_type.ocha_vimeo
+    - field.field.paragraph.ocha_polis.field_embed_code
+    - field.field.paragraph.ocha_polis.field_text
+    - field.field.paragraph.ocha_polis.field_title
+    - paragraphs.paragraphs_type.ocha_polis
   module:
+    - ocha_polis
     - text
-id: paragraph.ocha_vimeo.default
+_core:
+  default_config_hash: XZ9xzPAtkxxoLQiQcCIhOow7NJ5-APZYYlTBSwOTA2A
+id: paragraph.ocha_polis.default
 targetEntityType: paragraph
-bundle: ocha_vimeo
+bundle: ocha_polis
 mode: default
 content:
-  field_embed_url:
-    type: ocha_vimeo
+  field_embed_code:
+    type: ocha_polis
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -36,4 +38,4 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-hidden: { }
+hidden: {  }

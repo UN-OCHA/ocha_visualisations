@@ -1,0 +1,4 @@
+polis-responsive-iframe:
+  css:
+    component:
+      css/ocha-polis.css: {}

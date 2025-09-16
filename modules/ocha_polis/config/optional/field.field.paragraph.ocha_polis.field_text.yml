@@ -1,17 +1,18 @@
-
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_text
     - filter.format.ckeditor
-    - paragraphs.paragraphs_type.ocha_vimeo
+    - paragraphs.paragraphs_type.ocha_polis
   module:
     - text
-id: paragraph.ocha_vimeo.field_text
+_core:
+  default_config_hash: 8npc7uEVON1Dy7MvP4UjsG2yuCt5HuhTJrIKCINSAjY
+id: paragraph.ocha_polis.field_text
 field_name: field_text
 entity_type: paragraph
-bundle: ocha_vimeo
+bundle: ocha_polis
 label: Text
 description: ''
 required: false

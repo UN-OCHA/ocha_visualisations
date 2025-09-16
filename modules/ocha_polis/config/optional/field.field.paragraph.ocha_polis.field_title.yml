@@ -1,14 +1,15 @@
-
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_title
-    - paragraphs.paragraphs_type.ocha_powerbi
-id: paragraph.ocha_powerbi.field_title
+    - paragraphs.paragraphs_type.ocha_polis
+_core:
+  default_config_hash: 66vwlXQkP4iVTWuSKZ5J3BkO9d7J6_mYHsjruzVdIfU
+id: paragraph.ocha_polis.field_title
 field_name: field_title
 entity_type: paragraph
-bundle: ocha_powerbi
+bundle: ocha_polis
 label: Title
 description: ''
 required: false

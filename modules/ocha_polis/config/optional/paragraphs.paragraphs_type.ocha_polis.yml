@@ -1,9 +1,10 @@
-
 langcode: en
 status: true
 dependencies: {  }
-id: ocha_powerbi
-label: 'Power BI'
+_core:
+  default_config_hash: b6lvlUnwTcwyUjX7sxyxIwzdigo-it9v0HyPiAR1_4g
+id: ocha_polis
+label: 'Power Pol.is'
 icon_uuid: null
 icon_default: null
 description: ''

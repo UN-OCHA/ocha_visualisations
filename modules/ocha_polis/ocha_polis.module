@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @file
+ * Module file for the ocha_polis module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function ocha_polis_theme() {
+  return [
+    'ocha_polis_formatter' => [
+      'variables' => [
+        'attributes' => NULL,
+      ],
+    ],
+  ];
+}

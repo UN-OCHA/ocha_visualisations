@@ -1,0 +1,9 @@
+services:
+  ocha_polis.subscriber:
+    class: Drupal\ocha_polis\EventSubscriber\OchaPolisEventSubscriber
+    arguments: ['@logger.channel.ocha_polis', '@config.factory']
+    tags:
+      - { name: event_subscriber }
+  logger.channel.ocha_polis:
+    parent: logger.channel_base
+    arguments: ['ocha_polis']

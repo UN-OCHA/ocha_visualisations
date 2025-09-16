@@ -1,0 +1,8 @@
+type: module
+name: OCHA Poli.is
+description: 'Handles Poli.is integration.'
+package: unocha
+core_version_requirement: ^10 || ^11
+dependencies:
+  - ocha_visualisations:ocha_visualisations
+  - paragraphs:paragraphs
