@@ -32,6 +32,7 @@ class OchaPolisFormatter extends FormatterBase {
         $attributes = [
           'src' => "https://pol.is/$id",
           'id' => "polis_$id",
+          'data-conversation_id' => $id,
           'data-testid' => 'polis-iframe',
           'width' => '100%',
           'height' => '500px',

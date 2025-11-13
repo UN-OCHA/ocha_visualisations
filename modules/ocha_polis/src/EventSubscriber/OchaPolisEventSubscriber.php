@@ -16,4 +16,11 @@ class OchaPolisEventSubscriber extends BaseRequestEventSubscriber {
     'https://pol.is',
   ];
 
+  /**
+   * {@inheritdoc}
+   */
+  protected $script_urls = [
+    'https://pol.is/embed.js',
+  ];
+
 }

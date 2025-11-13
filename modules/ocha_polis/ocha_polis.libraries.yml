@@ -2,3 +2,9 @@ polis-responsive-iframe:
   css:
     component:
       css/ocha-polis.css: {}
+  js:
+    https://pol.is/embed.js:
+      type: external
+      attributes:
+        defer: true
+        async: true

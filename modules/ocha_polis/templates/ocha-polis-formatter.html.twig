@@ -12,13 +12,13 @@
 
 {{ attach_library('ocha_polis/polis-responsive-iframe') }}
 <div class="ocha-polis">
-  <iframe
+  <div
     {{ attributes }}
-    sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
-    width="{{ width }}"
-    height="{{ height }}"
-    referrerpolicy="no-referrer"
-    frameborder="0"
-    target="_blank">
-  </iframe>
+    class="polis"
+    data-border="none"
+    data-border_radius="0px"
+    data-padding="0px"
+    data-width="{{ width }}"
+    data-ucsf="0"
+    data-ui_lang="en"></div>
 </div>
