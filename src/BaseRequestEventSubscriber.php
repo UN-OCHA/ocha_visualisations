@@ -49,6 +49,13 @@ class BaseRequestEventSubscriber implements EventSubscriberInterface {
   protected $frame_urls = [];
 
   /**
+   * URLs for scripts.
+   *
+   * @var array
+   */
+  protected $script_urls = [];
+
+  /**
    * Constructs an SecKitEventSubscriber object.
    *
    * @param \Psr\Log\LoggerInterface $logger
@@ -68,7 +75,7 @@ class BaseRequestEventSubscriber implements EventSubscriberInterface {
    *   Filter Response Event object.
    */
   public function onKernelResponse(ResponseEvent $event) {
-    if (empty($this->frame_urls)) {
+    if (empty($this->frame_urls) && empty($this->script_urls)) {
       return;
     }
 
@@ -95,6 +102,7 @@ class BaseRequestEventSubscriber implements EventSubscriberInterface {
 
     $directives = explode('; ', $directives);
 
+    // Add iframe URLs.
     foreach ($this->frame_urls as $frame_url) {
       $found = FALSE;
       foreach ($directives as &$directive) {
@@ -108,6 +116,23 @@ class BaseRequestEventSubscriber implements EventSubscriberInterface {
 
       if (!$found) {
         $directives[] = 'frame-src ' . $frame_url;
+      }
+    }
+
+    // Add script URLs.
+    foreach ($this->script_urls as $script_url) {
+      $found = FALSE;
+      foreach ($directives as &$directive) {
+        if (strpos($directive, 'script-src') === 0) {
+          $found = TRUE;
+          if (strpos($directive, $script_url) === FALSE) {
+            $directive .= ' ' . $script_url;
+          }
+        }
+      }
+
+      if (!$found) {
+        $directives[] = 'script-src ' . $script_url;
       }
     }
 
